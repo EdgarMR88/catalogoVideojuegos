@@ -1,0 +1,537 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    color: #333;
+}
+
+table {
+    width: 80%;
+    margin: 20px auto;
+    border-collapse: collapse;
+    background: white;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+th, td {
+    padding: 10px;
+    text-align: left;
+}
+
+th {
+    background-color: #4CAF50;
+    color: white;
+}
+
+tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+/* Estilos para los resúmenes */
+.resumenes {
+    width: 80%;
+    margin: 20px auto;
+}
+
+.resumen-item {
+    background-color: white;
+    padding: 15px;
+    margin-bottom: 10px;
+    border-radius: 8px;
+    box-shadow: 0 0 5px rgba(0,0,0,0.1);
+    transition: background-color 0.3s;
+}
+
+.resumen-item:hover {
+    background-color: #e0f7fa;
+}
+
+h2 {
+    color: #4CAF50;
+}
+
+/* Estilos para la tabla comparativa */
+.comparativa {
+    margin-top: 20px;
+}
+
+.comparativa td.rentable {
+    background-color: #d4edda; /* Verde claro */
+    color: #155724;
+}
+
+.comparativa td.no-rentable {
+    background-color: #f8d7da; /* Rojo claro */
+    color: #721c24;
+}
+
+/* Desarrolladores */
+.desarrolladores {
+    width: 80%;
+    margin: 20px auto;
+    background-color: white;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 0 5px rgba(0,0,0,0.1);
+}
+
+.desarrolladores h2 {
+    color: #4CAF50;
+}
+
+/* Críticas */
+.criticas {
+    width: 80%;
+    margin: 20px auto;
+}
+
+.critica-card {
+    background-color: white;
+    padding: 15px;
+    margin-bottom: 10px;
+    border-radius: 8px;
+    box-shadow: 0 0 5px rgba(0,0,0,0.1);
+    transition: background-color 0.3s;
+}
+
+.critica-card:hover {
+    background-color: #e6f7ff;
+}
+
+.critica-card h3 {
+    color: #4CAF50;
+}
+
+/* Estilo para la cuadrícula de cartas */
+.cartas-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    padding: 20px;
+}
+
+.carta {
+    background-color: white;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 0 5px rgba(0,0,0,0.1);
+    transition: transform 0.3s, background-color 0.3s;
+}
+
+.carta:hover {
+    transform: scale(1.03);
+    background-color: #e6f7ff;
+}
+
+.carta h2 {
+    color: #4CAF50;
+}
+
+/* Estilo para la sección de personajes */
+.personajes {
+    width: 80%;
+    margin: 20px auto;
+}
+
+.personajes-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.personaje-card {
+    background-color: white;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 0 5px rgba(0,0,0,0.1);
+    transition: transform 0.3s, background-color 0.3s;
+}
+
+.personaje-card:hover {
+    transform: scale(1.03);
+    background-color: #e6f7ff;
+}
+
+.personaje-card h3 {
+    color: #4CAF50;
+    margin-bottom: 10px;
+}
+
+.personaje-card ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.personaje-card li {
+    margin-bottom: 5px;
+}
+
+/* Críticas con colores */
+.criticas-puntuadas {
+    width: 80%;
+    margin: 20px auto;
+}
+
+.criticas-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+/* Tarjeta base */
+.critica-card {
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 0 5px rgba(0,0,0,0.1);
+    transition: transform 0.3s;
+}
+
+/* Efecto al pasar el ratón */
+.critica-card:hover {
+    transform: scale(1.03);
+}
+
+/* Colores según la puntuación */
+.critica-card.excelente {
+    background-color: #d4edda;  /* Verde claro */
+    border-left: 5px solid #28a745;
+}
+
+.critica-card.buena {
+    background-color: #fff3cd;  /* Amarillo claro */
+    border-left: 5px solid #ffc107;
+}
+
+.critica-card.mala {
+    background-color: #f8d7da;  /* Rojo claro */
+    border-left: 5px solid #dc3545;
+}
+
+.critica-card h3 {
+    color: #4CAF50;
+}
+
+/* Resumen General */
+.resumen-general {
+    background-color: white;
+    padding: 20px;
+    margin: 20px auto;
+    width: 80%;
+    border-radius: 8px;
+    box-shadow: 0 0 5px rgba(0,0,0,0.1);
+    transition: background-color 0.3s;
+}
+
+.resumen-general:hover {
+    background-color: #e6f7ff;
+}
+
+.resumen-general h2 {
+    color: #4CAF50;
+    margin-bottom: 10px;
+}
+
+.resumen-general p {
+    margin: 5px 0;
+}
+
+/* Secciones por Año */
+.secciones-por-ano {
+    width: 80%;
+    margin: 20px auto;
+}
+
+.ano-seccion {
+    margin-top: 30px;
+    padding: 10px;
+    background-color: #4CAF50;
+    color: white;
+    border-radius: 8px;
+}
+
+.videojuego-item {
+    background-color: white;
+    padding: 15px;
+    margin-top: 10px;
+    border-radius: 8px;
+    box-shadow: 0 0 5px rgba(0,0,0,0.1);
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.videojuego-item:hover {
+    background-color: #e6f7ff;
+    transform: scale(1.02);
+}
+
+.videojuego-item h4 {
+    color: #4CAF50;
+}
+
+/* Gráfico de Ingresos vs Presupuesto */
+.grafico-ingresos {
+    width: 80%;
+    margin: 20px auto;
+    text-align: center;
+}
+
+.grafico-item {
+    margin-bottom: 15px;
+}
+
+.barra-container {
+    width: 100%;
+    background-color: #f0f0f0;
+    border-radius: 5px;
+    overflow: hidden;
+    padding: 5px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.barra {
+    text-align: left;
+    padding: 5px 10px;
+    color: white;
+    font-weight: bold;
+    border-radius: 5px;
+    min-width: 20%;
+}
+
+.barra.presupuesto {
+    background-color: #FF5733;  /* Rojo */
+}
+
+.barra.ingresos {
+    background-color: #4CAF50;  /* Verde */
+    font-size: 1em;
+}
+
+
+
+/* Tabla de Puntuaciones */
+.tabla-puntuaciones {
+    width: 80%;
+    margin: 20px auto;
+    text-align: center;
+}
+
+.tabla-puntuaciones table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.tabla-puntuaciones th, .tabla-puntuaciones td {
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+
+.tabla-puntuaciones th {
+    background-color: #4CAF50;
+    color: white;
+}
+
+.tabla-puntuaciones tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+/* Videojuego Más Exitoso */
+.top-videojuego {
+    width: 80%;
+    margin: 30px auto;
+    text-align: center;
+}
+
+.top-videojuego-card {
+    background-color: #FFD700; /* Dorado */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s;
+}
+
+.top-videojuego-card:hover {
+    transform: scale(1.05);
+}
+
+.top-videojuego-card h3 {
+    color: #4CAF50;
+    font-size: 24px;
+}
+
+.top-videojuego-card p {
+    font-size: 16px;
+    margin: 5px 0;
+}
+
+/* Lista de Personajes por Videojuego */
+.lista-personajes {
+    width: 80%;
+    margin: 30px auto;
+}
+
+.videojuego-personajes {
+    margin-bottom: 20px;
+    padding: 10px;
+    border-radius: 8px;
+    background-color: #f5f5f5;
+}
+
+.videojuego-personajes h3 {
+    color: #4CAF50;
+}
+
+.videojuego-personajes ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.videojuego-personajes li {
+    padding: 5px;
+    border-bottom: 1px solid #ddd;
+}
+
+/* Resaltar protagonista */
+.protagonista {
+    color: #FFD700;  /* Dorado */
+    font-size: 18px;
+}
+
+/* Contador de Personajes */
+.total-personajes {
+    width: 80%;
+    margin: 30px auto;
+    text-align: center;
+    background-color: #4CAF50;
+    color: white;
+    padding: 15px;
+    border-radius: 8px;
+    font-size: 18px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.total-personajes p {
+    font-size: 22px;
+    font-weight: bold;
+}
+
+/* ✅ Centrar las tarjetas en la pantalla */
+.grid-videojuegos {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; /* Centra las tarjetas */
+    gap: 20px; /* Espacio entre tarjetas */
+    padding: 20px; /* Espaciado general */
+}
+
+/* Estilos de las tarjetas */
+.videojuego-card {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    padding: 15px;
+    width: 280px; /* Tamaño fijo */
+    text-align: center;
+    transition: transform 0.3s ease-in-out;
+    margin: 10px; /* Agregar margen para evitar que se peguen */
+}
+
+.videojuego-card:hover {
+    transform: scale(1.05); /* Pequeño efecto al pasar el mouse */
+}
+
+.videojuego-card a {
+    text-decoration: none;
+    color: #4CAF50;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+/* ✅ Asegurar que el contenedor de los videojuegos ocupe todo el ancho */
+.lista-videojuegos {
+    max-width: 1200px; /* Evita que se expanda demasiado en pantallas grandes */
+    margin: 0 auto; /* Centra el contenedor */
+    text-align: center; /* Asegura que el título también esté centrado */
+}
+
+/* Estilos de detalles */
+#detalles-contenido {
+    width: 80%;
+    margin: 30px auto;
+    padding: 20px;
+    background-color: #f5f5f5;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Botón Volver al Catálogo */
+.boton-volver {
+    display: block;
+    text-align: center;
+    margin: 20px auto;
+    width: 200px;
+    padding: 10px;
+    background: #4CAF50;
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: bold;
+}
+
+.boton-volver:hover {
+    background: #45a049;
+}
+
+/* Barra de búsqueda */
+.busqueda {
+    width: 80%;
+    margin: 20px auto;
+    text-align: center;
+}
+
+.busqueda input {
+    width: 60%;
+    padding: 10px;
+    font-size: 16px;
+    border: 2px solid #4CAF50;
+    border-radius: 5px;
+    outline: none;
+}
+
+.busqueda input:focus {
+    border-color: #45a049;
+}
+
+/* Lista de videojuegos */
+.grid-videojuegos {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+    padding: 20px;
+}
+
+.videojuego-card {
+    background: white;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    transition: transform 0.3s;
+    text-align: center;
+}
+
+.videojuego-card:hover {
+    transform: scale(1.05);
+}
+
+.videojuego-card a {
+    text-decoration: none;
+    color: #4CAF50;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+
+
+
+
+

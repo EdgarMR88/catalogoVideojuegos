@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detalles del Videojuego</title>
+    <link rel="stylesheet" type="text/css" href="../assets/style.css">
+</head>
+<body>
+    <div id="detalles-contenido">
+        <h1>Detalles del Videojuego</h1>
+        <p>Cargando información...</p>
+    </div>
+
+    <script>
+        function cargarDetalles() {
+            const params = new URLSearchParams(window.location.search);
+            let tituloJuego = params.get("juego");
+    
+            if (tituloJuego) {
+                tituloJuego = tituloJuego.replace(/_/g, " "); // Reemplazar "_" por espacios
+    
+                const xhr = new XMLHttpRequest();
+                xhr.open("GET", `catalogo.xml`, true);
+                xhr.onreadystatechange = function () {
+                    if (xhr.readyState === 4 && xhr.status === 200) {
+                        const parser = new DOMParser();
+                        const xml = parser.parseFromString(xhr.responseText, "application/xml");
+    
+                        // Buscar el videojuego ignorando mayúsculas y espacios
+                        const juegos = Array.from(xml.getElementsByTagName("videojuego"));
+                        const juegoEncontrado = juegos.find(j => 
+                            j.getElementsByTagName("titulo")[0].textContent.trim().toLowerCase() === tituloJuego.trim().toLowerCase()
+                        );
+    
+                        if (juegoEncontrado) {
+                            document.getElementById("detalles-contenido").innerHTML = `
+                                <h1>${juegoEncontrado.getElementsByTagName("titulo")[0].textContent}</h1>
+                                <p><strong>Año de Lanzamiento:</strong> ${juegoEncontrado.getElementsByTagName("anioLanzamiento")[0].textContent}</p>
+                                <p><strong>Plataforma:</strong> ${juegoEncontrado.getElementsByTagName("plataforma")[0].textContent}</p>
+                                <p><strong>Género:</strong> ${juegoEncontrado.getElementsByTagName("genero")[0].textContent}</p>
+                                <p><strong>Resumen:</strong> ${juegoEncontrado.getElementsByTagName("resumen")[0].textContent}</p>
+                                <p><strong>Presupuesto:</strong> 💰 ${juegoEncontrado.getElementsByTagName("presupuesto")[0].textContent}</p>
+                                <p><strong>Ingresos:</strong> 📈 ${juegoEncontrado.getElementsByTagName("ingresos")[0].textContent}</p>
+                                <h3>Personajes:</h3>
+                                <ul>
+                                    ${Array.from(juegoEncontrado.getElementsByTagName("personaje"))
+                                          .map(p => `<li>${p.getAttribute("nombre")} - ${p.getAttribute("edad")} años (${p.getAttribute("papel")})</li>`)
+                                          .join('')}
+                                </ul>
+                                <a href="index.html" class="boton-volver">⬅ Volver al Catálogo</a>
+                            `;
+                        } else {
+                            document.getElementById("detalles-contenido").innerHTML = "<p>Videojuego no encontrado.</p>";
+                        }
+                    }
+                };
+                xhr.send();
+            }
+        }
+    
+        window.onload = cargarDetalles;
+    </script>
+    
+</body>
+</html>

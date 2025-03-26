@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Catálogo de Videojuegos</title>
+    <link rel="stylesheet" type="text/css" href="../assets/style.css">
+</head>
+<body>
+
+    <!-- 🔍 Barra de búsqueda -->
+    <div class="busqueda">
+        <input type="text" id="buscar" placeholder="🔍 Escribe el nombre de un videojuego..." onkeyup="filtrarVideojuegos()">
+        <button onclick="buscarVideojuego()">Buscar</button>
+        <p id="mensaje"></p>
+    </div>
+
+    <!-- Contenedor donde se mostrará la lista de videojuegos -->
+    <div id="contenido"></div>
+
+    <script>
+        async function cargarXML() {
+            try {
+                // Cargar XML
+                let responseXML = await fetch("../pages/catalogo.xml");
+                let xmlText = await responseXML.text();
+                let parser = new DOMParser();
+                let xml = parser.parseFromString(xmlText, "text/xml");
+
+                // Cargar XSLT
+                let responseXSLT = await fetch("../xslt/transform.xsl");
+                let xsltText = await responseXSLT.text();
+                let xslt = parser.parseFromString(xsltText, "text/xml");
+
+                // Aplicar XSLT
+                let xsltProcessor = new XSLTProcessor();
+                xsltProcessor.importStylesheet(xslt);
+                let resultDocument = xsltProcessor.transformToFragment(xml, document);
+
+                // Insertar en el DOM
+                let contenido = document.getElementById("contenido");
+                contenido.innerHTML = "";
+                contenido.appendChild(resultDocument);
+            } catch (error) {
+                console.error("Error al cargar XML/XSLT:", error);
+            }
+        }
+
+        function buscarVideojuego() {
+            let input = document.getElementById("buscar").value.toLowerCase();
+            let juegos = document.querySelectorAll("#contenido .videojuego-card");
+            let encontrado = false;
+
+            juegos.forEach(juego => {
+                let titulo = juego.querySelector("h3").innerText.toLowerCase();
+                if (titulo === input) {
+                    encontrado = true;
+                    window.location.href = `detalles.html?juego=${encodeURIComponent(titulo)}`;
+                }
+            });
+
+            let mensaje = document.getElementById("mensaje");
+            mensaje.innerText = encontrado ? "" : "⚠️ Videojuego no disponible";
+            mensaje.style.color = encontrado ? "" : "red";
+        }
+
+        window.onload = cargarXML;
+    </script>
+
+</body>
+</html>

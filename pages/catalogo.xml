@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="../xslt/transform.xsl"?>
+<catalogoVideojuegos>
+    <videojuego id="1">
+        <titulo>The Legend of Zelda: Breath of the Wild</titulo>
+        <anioLanzamiento>2017</anioLanzamiento>
+        <presupuesto>100000000</presupuesto>
+        <ingresos>150000000</ingresos>
+        <genero>Aventura</genero>
+        <plataforma>Nintendo Switch</plataforma>
+        <resumen>Un vasto mundo abierto donde los jugadores pueden explorar, resolver acertijos y combatir enemigos.</resumen>
+        <desarrolladores>
+            <desarrollador>Nintendo EPD</desarrollador>
+        </desarrolladores>
+        <criticas>
+            <critica>
+                <nombre>IGN</nombre>
+                <puntuacion>10</puntuacion>
+                <comentario>Un juego revolucionario que redefine lo que puede ser un título de aventuras</comentario>
+            </critica>
+        </criticas>
+        <personajes>
+            <personaje nombre="Link" edad="17" papel="Protagonista"/>
+            <personaje nombre="Zelda" edad="21" papel="Princesa y aliada"/>
+            <personaje nombre="Calamity Ganon" edad="añejo" papel="Antagonista"/>
+        </personajes>
+    </videojuego>
+    <videojuego id="2">
+        <titulo>The Witcher 3: Wild Hunt</titulo>
+        <anioLanzamiento>2015</anioLanzamiento>
+        <presupuesto>100000000</presupuesto>
+        <ingresos>1000000000</ingresos>
+        <genero>RPG</genero>
+        <plataforma>PC, PS4, Xbox One</plataforma>
+        <resumen>Geralt de Rivia, un cazador de monstruos, busca a su hija adoptiva en un mundo lleno de monstruos, magia y decisiones difíciles.</resumen>
+        <desarrolladores>
+            <desarrollador>CD Projekt Red</desarrollador>
+        </desarrolladores>
+        <criticas>
+            <critica>
+                <nombre>GameSpot</nombre>
+                <puntuacion>10</puntuacion>
+                <comentario>Un hito en el mundo de los videojuegos; una narrativa épica.</comentario>
+            </critica>
+        </criticas>
+        <personajes>
+            <personaje nombre="Geralt de Rivia" edad="40" papel="Protagonista"/>
+            <personaje nombre="Ciri" edad="20" papel="Hija adoptiva de Geralt"/>
+            <personaje nombre="Yennefer" edad="100" papel="Hechicera y amante de Geralt"/>
+        </personajes>
+    </videojuego>
+    <videojuego id="3">
+        <titulo>Dark Souls</titulo>
+        <anioLanzamiento>2011</anioLanzamiento>
+        <presupuesto>30000000</presupuesto>
+        <ingresos>170000000</ingresos>
+        <genero>Acción/RPG</genero>
+        <plataforma>PC, PS3, Xbox 360</plataforma>
+        <resumen>Un juego desafiante que sumerge a los jugadores en un mundo lleno de criaturas oscuras y peligros.</resumen>
+        <desarrolladores>
+            <desarrollador>FromSoftware</desarrollador>
+        </desarrolladores>
+        <criticas>
+            <critica>
+                <nombre>Edge</nombre>
+                <puntuacion>9</puntuacion>
+                <comentario>Una experiencia desafiante que recompensa la paciencia y la estrategia.</comentario>
+            </critica>
+        </criticas>
+        <personajes>
+            <personaje nombre="El No Muerto" edad="desconocido" papel="Protagonista"/>
+            <personaje nombre="Artorias" edad="añejo" papel="Caballero caído"/>
+            <personaje nombre="Gwyn" edad="añejo" papel="Lord de la Luz Solar"/>
+        </personajes>
+    </videojuego>
+</catalogoVideojuegos>
