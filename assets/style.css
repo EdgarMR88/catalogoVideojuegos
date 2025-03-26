@@ -415,13 +415,13 @@ h2 {
     font-weight: bold;
 }
 
-/* ✅ Centrar las tarjetas en la pantalla */
+/* ✅ Centrar y separar bien las tarjetas */
 .grid-videojuegos {
     display: flex;
     flex-wrap: wrap;
     justify-content: center; /* Centra las tarjetas */
-    gap: 20px; /* Espacio entre tarjetas */
-    padding: 20px; /* Espaciado general */
+    gap: 50px; /* 🔥 Aumentamos la separación entre tarjetas */
+    padding: 40px; /* Más espacio general */
 }
 
 /* Estilos de las tarjetas */
@@ -429,22 +429,15 @@ h2 {
     background-color: white;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    padding: 15px;
-    width: 280px; /* Tamaño fijo */
+    padding: 20px;
+    width: 260px; /* 🔥 Reducimos el ancho para más separación */
     text-align: center;
     transition: transform 0.3s ease-in-out;
-    margin: 10px; /* Agregar margen para evitar que se peguen */
+    margin-bottom: 40px; /* 🔥 Mayor separación entre filas */
 }
 
 .videojuego-card:hover {
     transform: scale(1.05); /* Pequeño efecto al pasar el mouse */
-}
-
-.videojuego-card a {
-    text-decoration: none;
-    color: #4CAF50;
-    font-size: 20px;
-    font-weight: bold;
 }
 
 /* ✅ Asegurar que el contenedor de los videojuegos ocupe todo el ancho */
@@ -453,6 +446,7 @@ h2 {
     margin: 0 auto; /* Centra el contenedor */
     text-align: center; /* Asegura que el título también esté centrado */
 }
+
 
 /* Estilos de detalles */
 #detalles-contenido {
@@ -528,6 +522,21 @@ h2 {
     color: #4CAF50;
     font-size: 20px;
     font-weight: bold;
+}
+
+/* ✅ Estilo llamativo para el encabezado */
+.encabezado {
+    text-align: center; /* Centra el texto */
+    font-size: 40px; /* Aumentamos el tamaño */
+    font-weight: bold;
+    color: white; /* Texto blanco */
+    background: linear-gradient(45deg, #ff6a00, #ee0979); /* 🔥 Degradado llamativo */
+    padding: 20px; /* Espaciado interno */
+    border-radius: 10px; /* Bordes redondeados */
+    margin: 20px auto; /* Espaciado superior e inferior */
+    max-width: 80%; /* Evita que se expanda demasiado */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Sombra para resaltar */
+    text-transform: uppercase; /* Convierte el texto en mayúsculas */
 }
 
 

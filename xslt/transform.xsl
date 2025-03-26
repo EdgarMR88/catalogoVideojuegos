@@ -5,12 +5,8 @@
 
     <xsl:template match="/">
         <html>
-        <head>
-            <title>Catálogo de Videojuegos</title>
-            <link rel="stylesheet" type="text/css" href="../assets/style.css"/>
-        </head>
         <body>
-            <h1>Catálogo de Videojuegos</h1>
+            <h1 class="encabezado">🎮 Catálogo de Videojuegos 🎮</h1>
 
             <!-- Ejercicio 1: Tabla de Videojuegos -->
             <table border="1">
